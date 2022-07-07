@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: inherit;
+  color: inherit;
+  font: inherit;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.progress__bar {
+  height: 10px;
+  width: 0%;
+  max-width: 100%;
+}
+.progress__max {
+  margin: 10px;
+  font-size: 0.8em;
+}
+.progress__max__input {
+  width: 40px;
+  text-align: center;
+}
+
+.codes-container {
+  display: flex;
+}
+.codes-container__element {
+  flex: 1 0 0;
+}
+.codes-container__element__area {
+  width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */
