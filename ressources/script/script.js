@@ -10,8 +10,7 @@ const currentLength = document.getElementById("current-length");
 const progressBar = document.getElementById("progress-bar");
 const notification = document.getElementById("notification");
 
-// Initialiszation when refreshed
-modifyHtml()
+modifyHtml();
 
 // Modify the value of the displayer
 function modifyHtml() {

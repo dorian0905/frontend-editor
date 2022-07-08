@@ -12,10 +12,11 @@ function conservation($name) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/ressources/css/style.css">
-    <script type="text/javascript" src="ressources/script/script.js" defer></script>
+    <link rel="shortcut icon" type="image/png" href="/ressources/img/icon.png">
     <title>NepeDoc</title>
 </head>
 <body>
+    
     <div class="notification" id="notification">
         <p class="notification__text">Copied to the clipboard</p>
     </div>
@@ -71,12 +72,15 @@ function conservation($name) {
     </div>
     <style id="style-container">
         <?= conservation('css-area'); ?>
+
     </style>
     <div class="displayer" id="displayer">
         <?= conservation('html-area'); ?>
+        
     </div>
+    <script type="text/javascript" src="ressources/script/script.js"></script>
     <script id="script-container">
-        <?= conservation('js-area'); ?>
+<?= conservation('js-area'); ?>
     </script>
 </body>
 </html>
