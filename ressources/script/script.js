@@ -8,7 +8,7 @@ const scriptContainer = document.getElementById("script-container");
 const codesContainer = document.getElementById("codes-container");
 const currentLength = document.getElementById("current-length");
 const progressBar = document.getElementById("progress-bar");
-const notification = document.getElementById("notification")
+const notification = document.getElementById("notification");
 
 // Initialiszation when refreshed
 modifyHtml()
@@ -17,8 +17,8 @@ modifyHtml()
 function modifyHtml() {
     displayer.innerHTML = htmlArea.value;
     currentLength.innerText = displayer.innerText.length;
-    updateMaxLengthArea()
-    updateProgressBar()
+    updateMaxLengthArea();
+    updateProgressBar();
 }
 
 // Modify the maxlength of the HTML area, with taking into account the HTML tags
@@ -65,13 +65,13 @@ function copyColor() {
 
 // Display notification
 function displayNotif() {
-    notification.classList.add('active')
-    setTimeout(() => {hideNotif()}, 2000)
+    notification.classList.add('active');
+    setTimeout(() => {hideNotif()}, 2000);
 }
 
 // Hide notification
 function hideNotif() {
-    notification.classList.remove('active')
+    notification.classList.remove('active');
 }
 
 // Send the form with all data when focus out, to insert the js into the index

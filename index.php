@@ -17,7 +17,7 @@ function conservation($name) {
 </head>
 <body>
     <div class="notification" id="notification">
-        <p class="notification__text">Tag copied to the clipboard</p>
+        <p class="notification__text">Copied to the clipboard</p>
     </div>
     <header class="header">
         <h1 class="header__title">NepeDoc</h1>
@@ -37,7 +37,7 @@ function conservation($name) {
                 </div>
                 <div class="flex">
                     <div class="codes-container__element__buttons__button" onclick="copyTag('div')">DIV</div>
-                    <div class="codes-container__element__buttons__button" onclick="copyTag('span')">SPAN</div>
+                    <div class="codes-container__element__buttons__button" onclick="copyTag('p')">P</div>
                     <div class="codes-container__element__buttons__button" onclick="copyTag('header')">HEADER</div>
                     <div class="codes-container__element__buttons__button" onclick="copyTag('section')">SECTION</div>
                     <div class="codes-container__element__buttons__button" onclick="copyTag('footer')">FOOTER</div>
