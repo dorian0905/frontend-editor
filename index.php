@@ -13,39 +13,61 @@ function conservation($name) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/ressources/css/style.css">
     <script type="text/javascript" src="ressources/script/script.js" defer></script>
-    <!-- <script src="ressources/lib/codemirror/lib/codemirror.js"></script>
-    <link rel="stylesheet" href="ressources/lib/codemirror/lib/codemirror.css">
-    <link rel="stylesheet" href="ressources/lib/codemirror/theme/material.css">
-    <script src="ressources/lib/codemirror/mode/javascript/javascript.js"></script> -->
     <title>NepeDoc</title>
 </head>
 <body>
-    <header>
-        <h1 class="title">NepeDoc</h1>
+    <div class="notification" id="notification">
+        <p class="notification__text">Tag copied to the clipboard</p>
+    </div>
+    <header class="header">
+        <h1 class="header__title">NepeDoc</h1>
     </header>
     <form id="codes-container" class="codes-container" action="/" method="post">
         <div class="codes-container__element">
-            <h2 class="codes-container__element__title">HTML</h2>
-            <textarea class="codes-container__element__area" name="html-area" id="html-area" cols="30" rows="10" oninput=modifyHtml() maxlength="200"><?= conservation('html-area'); ?></textarea>
+            <div class="codes-container__element__header">
+                <h2 class="codes-container__element__header__title codes-container__element__header__title--html">HTML</h2>
+            </div>
+            <textarea class="codes-container__element__area" name="html-area" id="html-area" cols="30" rows="10" oninput=modifyHtml() maxlength="200" spellcheck="false"><?= conservation('html-area'); ?></textarea>
+            <div class="codes-container__element__buttons">
+                <div>
+                    <input class="codes-container__element__buttons__check" type="checkbox" id="add-class">
+                    <label class="codes-container__element__buttons__label" for="add-class"> add Class</label>
+                    <input class="codes-container__element__buttons__check" type="checkbox" id="add-id">
+                    <label class="codes-container__element__buttons__label" for="add-id"> add Id</label>
+                </div>
+                <div class="flex">
+                    <div class="codes-container__element__buttons__button" onclick="copyTag('div')">DIV</div>
+                    <div class="codes-container__element__buttons__button" onclick="copyTag('span')">SPAN</div>
+                    <div class="codes-container__element__buttons__button" onclick="copyTag('header')">HEADER</div>
+                    <div class="codes-container__element__buttons__button" onclick="copyTag('section')">SECTION</div>
+                    <div class="codes-container__element__buttons__button" onclick="copyTag('footer')">FOOTER</div>
+                </div>
+            </div>
         </div>
         <div class="codes-container__element">
-            <h2 class="codes-container__element__title">CSS</h2>
-            <textarea class="codes-container__element__area" name="css-area" id="css-area" cols="30" rows="10" oninput=modifyCss()><?= conservation('css-area'); ?></textarea>
+            <div class="codes-container__element__header">
+                <h2 class="codes-container__element__header__title codes-container__element__header__title--css">CSS</h2>
+            </div>
+            <textarea class="codes-container__element__area" name="css-area" id="css-area" cols="30" rows="10" oninput=modifyCss() spellcheck="false"><?= conservation('css-area'); ?></textarea>
+            <div class="codes-container__element__buttons codes-container__element__buttons--center">
+                <input type="color" id="input-color">
+                <div class="codes-container__element__buttons__button" onclick="copyColor('')">Copy Color</div>
+            </div>
         </div>
         <div class="codes-container__element">
-            <h2 class="codes-container__element__title">JS</h2>
-            <textarea class="codes-container__element__area" name="js-area" id="js-area" cols="30" rows="10"><?= conservation('js-area'); ?></textarea>
+            <div class="codes-container__element__header">
+                <h2 class="codes-container__element__header__title codes-container__element__header__title--js">JS</h2>
+            </div>
+            <textarea class="codes-container__element__area" name="js-area" id="js-area" cols="30" rows="10" spellcheck="false"><?= conservation('js-area'); ?></textarea>
         </div>
     </form>
+    <div id="y-resizer"></div>
     <div class="progress">
         <div class="progress__bar" id="progress-bar"></div>
         <div class="progress__max">
-            <label class="progress__max__label" for="max-length">Maximum :</label>
+            <p class="progress__max__label" for="max-length">Nombre de caractères : <span id="current-length">0</span> / </p>
             <input class="progress__max__input" name="max-length" id="max-length" type="text" value="200" onchange="modifyHtml()">
         </div>
-    </div>
-    <div>
-        <p id="current-length">0</p>
     </div>
     <style id="style-container">
         <?= conservation('css-area'); ?>
